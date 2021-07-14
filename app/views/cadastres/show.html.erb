@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cadastre.name %>
+</p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @cadastre.cpf %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @cadastre.phone %>
+</p>
+
+<%= link_to 'Edit', edit_cadastre_path(@cadastre) %> |
+<%= link_to 'Back', cadastres_path %>
