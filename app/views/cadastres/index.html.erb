@@ -19,8 +19,6 @@
         <td><%= cadastre.cpf %></td>
         <td><%= cadastre.phone %></td>
         <td><%= link_to 'Show', cadastre %></td>
-        <td><%= link_to 'Edit', edit_cadastre_path(cadastre) %></td>
-        <td><%= link_to 'Destroy', cadastre, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +26,5 @@
 
 <br>
 
-<%= link_to 'New Cadastre', new_cadastre_path %>
+<%= link_to 'Novo Cadastro', new_cadastre_path %>
+<%= link_to 'Estatisticas', statistics_path %>

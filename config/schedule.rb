@@ -23,6 +23,6 @@
 # que roda o reke mencionado diariamente
 
 
-every 1.day, at: '01:33 am' do
+every 1.day, at: '01:00 pm' do
   rake "diary_statistic:statistic"
 end

@@ -1,3 +1,7 @@
+<%= link_to 'Cadastre-se', new_cadastre_path %>
+<br/>
+<br/>
+<br/>
 <table>
   <thead>
     <tr>
@@ -5,6 +9,14 @@
       <td><%= @total_deaths %></td>
       <th>Total de Confirmados </th>
       <td><%= @total_cases %></td>
+    </tr>
+  </thead>
+  <thead>
+    <tr>
+      <th>Total de mortes (diario)</th>
+      <td><%= @total_deaths_diary %></td>
+      <th>Total de Confirmados(diario) </th>
+      <td><%= @total_cases_diary %></td>
     </tr>
   </thead>
 
@@ -29,3 +41,6 @@
     <% end %>
   </tbody>
 </table>
+
+
+

@@ -1,18 +1,32 @@
-<%content_for :head do -%>
-  <%= javascript_tag 'cadastres'%>
-<% end %>
-<%= content_tag :div,
-  id: "cadastre-form",
-  data: {
-    cadastre: cadastre.to_json(except: [:created_at, :updated_at])
-  } do %>
-  <label>Nome</label>
-  <input type="text" v-model="cadastre.name" />
-  <label>Cpf</label>
-  <input type="text" v-model="cadastre.cpf" />
-  <label>Telefone</label>
-  <input type="text" v-model="cadastre.phone" />
-  <br />
-  <br />
-  <button v-on:click="Submit">Cadastrar</button>
+<%= form_with(model: cadastre, local: true) do |form| %>
+  <% if cadastre.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cadastre.errors.count, "error") %> prohibited this cadastre from being saved:</h2>
+
+      <ul>
+      <% cadastre.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cpf %>
+    <%= form.text_field :cpf %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
 <% end %>
