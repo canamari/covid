@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+    
+    <% if content_for? :head%>
+      <%= yield :head%>
+    <% end %>
+    
     <title>Covid</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>

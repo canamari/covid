@@ -1,5 +1,8 @@
 {
   "name": "covid",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "vue-resource": "^1.5.3",
+    "vue-turbolinks": "^2.2.2"
+  }
 }

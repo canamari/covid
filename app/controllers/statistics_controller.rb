@@ -4,6 +4,12 @@ class StatisticsController < ApplicationController
 
   # GET /statistics or /statistics.json
   def index
+    @statistics_all = Statistic.where('created_at::date = ?', Time.now)
+    @total_deaths = @statistics_all.sum(:deaths)
+    @total_cases = @statistics_all.sum(:casess)
+  end
+
+  def update
     @statistics = @statistic.states
     
     @json = JSON.parse(@statistics.to_s)
@@ -14,8 +20,7 @@ class StatisticsController < ApplicationController
           uf: key2['uf'],
           state: key2['state'],
           casess: key2['cases'],
-          deaths: key2['deaths'],
-          created_at: key2['datetime']
+          deaths: key2['deaths']
         ).save
       end
 
